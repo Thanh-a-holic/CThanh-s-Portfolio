@@ -1,5 +1,37 @@
+# Site settings
 title: Cong_Thanh
+description: A personal project or portfolio site # Add a brief description about your site
+show_downloads: true
 
-
-show_downloads: True
+# GitHub Pages theme
 theme: jekyll-theme-minimal
+
+# Additional optional configurations
+logo: /path/to/your/logo.png  # Optional: Add a logo image
+github:
+  is_project_page: true
+  repository_url: https://github.com/yourusername/your-repository  # Replace with your actual GitHub repo URL
+
+# Plugins (optional)
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Social media and contact information (optional)
+email: your.email@example.com
+twitter_username: your_twitter_handle
+github_username: your_github_username
+
+# Build settings
+markdown: kramdown
+permalink: /:title/
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
