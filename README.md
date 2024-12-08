@@ -35,6 +35,20 @@ data = pd.read_csv(r"C:\Users\Admin\Downloads\demand_inventory.csv")
 
 # Display initial rows
 print(data.head())
+| Unnamed: 0 | Date       | Product_ID | Demand | Inventory |
+|------------|------------|------------|--------|-----------|
+| 0          | 2023-06-01 | P1         | 51     | 5500      |
+| 1          | 2023-06-02 | P1         | 141    | 5449      |
+| 2          | 2023-06-03 | P1         | 172    | 5308      |
+| 3          | 2023-06-04 | P1         | 91     | 5136      |
+| 4          | 2023-06-05 | P1         | 198    | 5045      |
+
+### Dataset Columns
+- **Unnamed: 0**: Index (removed during preprocessing).
+- **Date**: The observation date.
+- **Product_ID**: The unique identifier for the product.
+- **Demand**: The daily demand for the product.
+- **Inventory**: The inventory level at the end of each day.
 ```
 ---
 ### Data Preprocessing
