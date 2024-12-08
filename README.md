@@ -2,49 +2,47 @@
 
 # EASY Demand Forecasting & Inventory Optimization
 
-## Project Overview
-This project focuses on developing a demand forecasting and inventory optimization system. The goal is to predict future product demand and optimize inventory levels to minimize costs and maximize service levels.
+# Demand Forecasting & Inventory Optimization
 
-## Features
-- **Demand Forecasting**: Uses historical sales data to predict future demand.
-- **Inventory Optimization**: Determines optimal inventory levels to balance holding costs and stockout risks.
-- **Data Visualization**: Provides visual insights into sales trends and inventory performance.
+## Overview
+This project focuses on forecasting demand and optimizing Product_ID `P1` inventory using time series analysis and inventory management strategies.
 
-## Installation
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/yourusername/your-repo-name.git
-    ```
-2. Navigate to the project directory:
-    ```bash
-    cd your-repo-name
-    ```
-3. Install the required packages:
-    ```bash
-    pip install -r requirements.txt
-    ```
+---
 
-## Usage
-1. Prepare your dataset and place it in the `data` directory.
-2. Run the main script to start the forecasting and optimization process:
-    ```bash
-    python main.py
-    ```
-3. View the results in the `output` directory.
+## Project Tasks
+1. Utilize time series analysis to forecast future Product_ID `P1` demand.
+2. Generate predictions for the next 10 days.
+3. Calculate and implement safety stock levels to account for demand variability.
+4. Determine the reorder point to identify when to replenish inventory.
+5. Apply the Economic Order Quantity (EOQ) concept to minimize inventory costs.
+6. Define the reorder cycle, representing the time interval between placing orders.
 
-## Project Structure
-- `data/`: Contains the dataset files.
-- `notebooks/`: Jupyter notebooks for exploratory data analysis and model development.
-- `src/`: Source code for the project.
-- `output/`: Directory where the results are saved.
-- `requirements.txt`: List of required Python packages.
-- `README.md`: Project documentation.
+---
 
-## Contributing
-Contributions are welcome! Please fork the repository and submit a pull request.
+## Code Walkthrough
 
-## License
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+### Import Libraries and Load Data
+```python
+import pandas as pd
+import numpy as np
+import plotly.express as px
+from statsmodels.graphics.tsaplots import plot_acf, plot_pacf
+import matplotlib.pyplot as plt
+from statsmodels.tsa.statespace.sarimax import SARIMAX
 
-## Contact
-For any questions or suggestions, please contact [your email].
+# Load the dataset
+data = pd.read_csv(r"C:\Users\Admin\Downloads\demand_inventory.csv")
+
+# Display initial rows
+print(data.head())
+```
+---
+### Data Preprocessing
+```python
+# Remove unnecessary columns
+data = data.drop(columns=['Unnamed: 0'])
+data['Date'] = pd.to_datetime(data['Date'], format='%Y-%m-%d')
+
+# Display processed data
+print(data.head())
+```
